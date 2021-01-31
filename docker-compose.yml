@@ -1,0 +1,29 @@
+version: "3.3"
+volumes:
+  curse-platzi-postgresql:
+services:
+  db_postgres:
+    container_name: platzi-postgres
+    image: postgres
+    volumes:
+      - curse-platzi-postgresql:/var/lib/postgresql/data
+    restart: on-failure:3
+    ports:
+      - 5431:5432
+    env_file:
+      - .env
+  backend_platziverse:
+    restart: on-failure:3
+    stdin_open: true
+    tty: true
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ".:/home/app/"
+    ports:
+      - "4001:3000"
+    depends_on:
+      - db_postgres
+    env_file:
+      - ./platzi-verse-db/.env

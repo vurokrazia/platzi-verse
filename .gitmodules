@@ -1,0 +1,3 @@
+[submodule "platzi-verse-db"]
+	path = platzi-verse-db
+	url = git@github.com:vurokrazia/platzi-verse-db.git
