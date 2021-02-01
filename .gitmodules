@@ -1,3 +1,6 @@
 [submodule "platzi-verse-db"]
 	path = platzi-verse-db
 	url = git@github.com:vurokrazia/platzi-verse-db.git
+[submodule "platzi-verse-mqtt"]
+	path = platzi-verse-mqtt
+	url = git@github.com:vurokrazia/platzi-verse-mqtt.git
